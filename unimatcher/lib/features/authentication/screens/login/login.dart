@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:unimatcher/common/styles/spacing_style.dart';
 import 'package:unimatcher/common/widgets/login/form_divider.dart';
 import 'package:unimatcher/common/widgets/login/social_buttons.dart';

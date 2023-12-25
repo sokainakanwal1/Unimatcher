@@ -1,4 +1,3 @@
-
 class TSizes {
   // Padding and margin sizes
   static const double xs = 4.0;
@@ -45,7 +44,7 @@ class TSizes {
 
   // Product item dimensions
   static const double productImageSize = 120.0;
-  static const double productImageRadius = 16.0;
+  static const double univeristyImageRadius = 16.0;
   static const double productItemHeight = 160.0;
 
   // Input field
@@ -68,6 +67,3 @@ class TSizes {
   // Grid view spacing
   static const double gridViewSpacing = 16.0;
 }
-
-
-

@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:unimatcher/common/styles/spacing_style.dart';
-import 'package:unimatcher/features/authentication/screens/login/login.dart';
-import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
 import 'package:unimatcher/utils/constants/text_strings.dart';
 import 'package:unimatcher/utils/helpers/helper_functions.dart';

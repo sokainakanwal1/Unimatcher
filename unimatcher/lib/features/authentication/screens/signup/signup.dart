@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/get_utils.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:unimatcher/common/widgets/login/form_divider.dart';
 import 'package:unimatcher/common/widgets/login/social_buttons.dart';
 import 'package:unimatcher/features/authentication/screens/signup/widgets/signup_form.dart';
-import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
 import 'package:unimatcher/utils/constants/text_strings.dart';
 import 'package:unimatcher/utils/helpers/helper_functions.dart';
@@ -19,7 +16,7 @@ class SignupScreen extends StatelessWidget {
       appBar: AppBar(),
       body: SingleChildScrollView(
           child: Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

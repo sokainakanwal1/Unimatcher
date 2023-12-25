@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/get_utils.dart';
 import 'package:unimatcher/utils/constants/colors.dart';
-import 'package:unimatcher/utils/constants/text_strings.dart';
 import 'package:unimatcher/utils/helpers/helper_functions.dart';
 
 class TDivider extends StatelessWidget {
