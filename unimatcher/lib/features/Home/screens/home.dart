@@ -1,10 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:unimatcher/common/images/rounded_image.dart';
 import 'package:unimatcher/common/widgets/custome_shapes/containers/primary_header_container.dart';
 import 'package:unimatcher/common/widgets/layout/university_grid_layout.dart';
 import 'package:unimatcher/common/widgets/text/sectionheading.dart';
 import 'package:unimatcher/common/widgets/univeristies/univeristycard.dart';
+import 'package:unimatcher/features/Home/screens/view_all.dart';
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
@@ -53,7 +55,10 @@ class HomeScreen extends StatelessWidget {
                         const UMSectionHeading(
                             title: 'All Universities',
                             textColor: TColors.black),
-                        TextButton(onPressed: () {}, child: const Text('View All'))
+                        TextButton(
+                            onPressed: () =>
+                                Get.to(() => const AllUniversities()),
+                            child: const Text('View All'))
                       ],
                     ),
                     UMGridLayout(

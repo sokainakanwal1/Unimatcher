@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:unimatcher/features/Home/screens/home.dart';
-import 'package:unimatcher/features/Profile/screens/settings.dart';
+import 'package:unimatcher/features/Profile/screens/profile_screen.dart';
 import 'package:unimatcher/features/aggregate%20calculator/screens/calculator.dart';
 import 'package:unimatcher/features/comparison/screens/comparison.dart';
 import 'package:unimatcher/features/study%20material/screens/Prepration.dart';
@@ -52,6 +52,6 @@ class NavigationController extends GetxController {
     const CalculatorScreen(),
     const PreprationScreen(),
     const ComparisonScreen(),
-    const SettingsScreen(),
+    const ProfileScreen(),
   ];
 }
