@@ -34,10 +34,10 @@ class HomeScreen extends StatelessWidget {
                           imageUrl: TImages.promoBanner1,
                         ),
                         RoundedImage(
-                          imageUrl: TImages.promoBanner2,
+                          imageUrl: TImages.promoBanner1,
                         ),
                         RoundedImage(
-                          imageUrl: TImages.promoBanner3,
+                          imageUrl: TImages.promoBanner1,
                         ),
                       ],
                     ),

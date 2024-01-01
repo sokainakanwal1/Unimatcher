@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:unimatcher/features/prefrence%20match/screens/match+prefrence.dart';
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
 import 'package:unimatcher/utils/device/device_utility.dart';
@@ -7,13 +10,12 @@ import 'package:unimatcher/utils/device/device_utility.dart';
 class SearchContainer extends StatelessWidget {
   const SearchContainer({
     super.key,
-    this.onTap,
   });
-  final VoidCallback? onTap;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () => Get.to(() => const PrefrenceMatch()),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
         child: Container(

@@ -60,7 +60,7 @@ class TImages {
   static const String onBoardingImage3 =
       "assets/images/on_boarding_images/sammy-line-prepration.gif";
 
-  // -- Products
+  // -- Universities
   static const String riphahUni = "assets/images/products/riphahUni.png";
   static const String productImage2 = "assets/images/products/product-1.png";
   static const String productImage3 =
@@ -221,7 +221,7 @@ class TImages {
 
   //Banners
   static const String promoBanner1 =
-      "assets/images/products/promo-banner-1.png";
+      "assets/images/products/promo-banner-1.jpg";
   static const String promoBanner2 =
       "assets/images/products/promo-banner-2.png";
   static const String promoBanner3 =
@@ -238,17 +238,28 @@ class TImages {
   //Profile
   static const String user = "assets/images/content/user.png";
 
-  // -- Payment Methods
-  static const String applePay = "assets/icons/payment_methods/apple-pay.png";
-  static const String googlePay = "assets/icons/payment_methods/google-pay.png";
-  static const String creditCard =
-      "assets/icons/payment_methods/credit-card.png";
-  static const String masterCard =
-      "assets/icons/payment_methods/master-card.png";
-  static const String paypal = "assets/icons/payment_methods/paypal.png";
-  static const String visa = "assets/icons/payment_methods/visa.png";
-  static const String paystack = "assets/icons/payment_methods/paystack.png";
-  static const String paytm = "assets/icons/payment_methods/paytm.png";
-  static const String successfulPaymentIcon =
-      "assets/icons/payment_methods/successful_payment_icon.png";
+  // -- Calculator Icons
+  static const String mdcat = "assets/icons/calculatorIcons/MDCAT.png";
+  static const String ecat = "assets/icons/calculatorIcons/ECAT.png";
+  static const String nts = "assets/icons/calculatorIcons/NTS.png";
+  static const String nums = "assets/icons/calculatorIcons/NUMS.png";
+  static const String book1 = "assets/icons/subjectsIcons/book1.png";
+  static const String book2 = "assets/icons/subjectsIcons/book2.png";
+  static const String mdcatIcon = "assets/icons/subjectsIcons/doctor.png";
+  static const String ecatIcon = "assets/icons/subjectsIcons/engineer.jpg";
+
+  ///-- Subjects Icons
+  static const String bioIcon = "assets/icons/subjectsIcons/bioIcon.png";
+  static const String chemIcon = "assets/icons/subjectsIcons/chemIcon.png";
+  static const String phyIcon = "assets/icons/subjectsIcons/phyIcon.png";
+  static const String engIcon = "assets/icons/subjectsIcons/engIcon.png";
+  static const String logicIcon = "assets/icons/subjectsIcons/logicIcon.png";
+  static const String mathsIcon = "assets/icons/subjectsIcons/mathIcon.png";
+  static const String statesIcon = "assets/icons/subjectsIcons/statsIcon.png";
+  static const String csIcon = "assets/icons/subjectsIcons/csIcon.png";
+  static const String psyIcon = "assets/icons/subjectsIcons/psyIcon.png";
+  static const String analyticsIcon =
+      "assets/icons/subjectsIcons/analyticsIcon.png";
+  static const String quantativeIcon =
+      "assets/icons/subjectsIcons/quantativeIcon.png";
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "531800012003",
+    "project_id": "unimatcher-1f723",
+    "storage_bucket": "unimatcher-1f723.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531800012003:android:e448d8bc4ab5c14b7d01d6",
+        "android_client_info": {
+          "package_name": "com.example.unimatcher"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnUJvQO9i6bh27-xVAf2fm4gjHFfrjvd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

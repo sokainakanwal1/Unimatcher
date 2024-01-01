@@ -5,7 +5,7 @@ import 'package:unimatcher/features/Home/screens/home.dart';
 import 'package:unimatcher/features/Profile/screens/profile_screen.dart';
 import 'package:unimatcher/features/aggregate%20calculator/screens/calculator.dart';
 import 'package:unimatcher/features/comparison/screens/comparison.dart';
-import 'package:unimatcher/features/study%20material/screens/Prepration.dart';
+import 'package:unimatcher/features/study%20material/screens/prepration.dart';
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/helpers/helper_functions.dart';
 
@@ -29,14 +29,14 @@ class NavigationMenu extends StatelessWidget {
                 ? TColors.white.withOpacity(0.1)
                 : TColors.black.withOpacity(0.1),
             destinations: const [
-              NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+              NavigationDestination(icon: Icon(Iconsax.home), label: ''),
               NavigationDestination(
-                  icon: Icon(Iconsax.calculator), label: 'Calculator'),
-              NavigationDestination(
-                  icon: Icon(Iconsax.book1), label: 'Prepration'),
-              NavigationDestination(
-                  icon: Icon(Iconsax.arrow), label: 'Compare'),
-              NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+                icon: Icon(Iconsax.calculator),
+                label: '',
+              ),
+              NavigationDestination(icon: Icon(Iconsax.book1), label: ''),
+              NavigationDestination(icon: Icon(Iconsax.arrow), label: ''),
+              NavigationDestination(icon: Icon(Iconsax.user), label: ''),
             ]),
       ),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
@@ -50,8 +50,8 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const CalculatorScreen(),
-    const PreprationScreen(),
-    const ComparisonScreen(),
+    const StudyMaterial(),
+    const UniversityComparisonScreen(),
     const ProfileScreen(),
   ];
 }
