@@ -17,19 +17,19 @@ class SearchContainer extends StatelessWidget {
     return GestureDetector(
       onTap: () => Get.to(() => const PrefrenceMatch()),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+        padding: const EdgeInsets.symmetric(horizontal: UMSizes.defaultSpace),
         child: Container(
-            width: TDeviceUtils.getScreenWidth(context),
-            padding: const EdgeInsets.all(TSizes.md),
+            width: UMDeviceUtils.getScreenWidth(context),
+            padding: const EdgeInsets.all(UMSizes.md),
             decoration: BoxDecoration(
-                color: TColors.white,
-                borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
-                border: Border.all(color: TColors.grey)),
+                color: UMColors.white,
+                borderRadius: BorderRadius.circular(UMSizes.cardRadiusLg),
+                border: Border.all(color: UMColors.grey)),
             child: Row(
               children: [
-                const Icon(Iconsax.search_normal, color: TColors.darkerGrey),
+                const Icon(Iconsax.search_normal, color: UMColors.darkerGrey),
                 const SizedBox(
-                  width: TSizes.spaceBtwItems,
+                  width: UMSizes.spaceBtwItems,
                 ),
                 Text(
                   'Match Your Prefrence',

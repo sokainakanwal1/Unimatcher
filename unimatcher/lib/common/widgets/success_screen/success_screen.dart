@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:unimatcher/common/styles/spacing_style.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
 import 'package:unimatcher/utils/constants/text_strings.dart';
@@ -20,16 +21,14 @@ class SuccessScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: TSpacingStyle.paddingWithAppBarHeight * 2,
+          padding: UMSpacingStyle.paddingWithAppBarHeight * 2,
           child: Column(
             children: [
               ///Image
-              Image(
-                image: AssetImage(image),
-                width: THelperFunctions.screenWidth() * 0.6,
-              ),
+              Lottie.asset(image,
+                  width: MediaQuery.of(context).size.width * 0.6),
               const SizedBox(
-                height: TSizes.spaceBtwSections,
+                height: UMSizes.spaceBtwSections,
               ),
 
               ///Title and SUbTitle
@@ -39,7 +38,7 @@ class SuccessScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: UMSizes.spaceBtwItems,
               ),
 
               Text(
@@ -48,7 +47,7 @@ class SuccessScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: UMSizes.spaceBtwItems,
               ),
 
               ///Buttons
@@ -56,7 +55,7 @@ class SuccessScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: onPressed,
-                  child: const Text(TTexts.tContinue),
+                  child: const Text(UMTexts.tContinue),
                 ),
               ),
             ],

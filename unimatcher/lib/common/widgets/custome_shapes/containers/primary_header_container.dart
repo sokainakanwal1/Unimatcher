@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:iconsax/iconsax.dart';
@@ -10,6 +11,7 @@ import 'package:unimatcher/common/widgets/image_text_widget/vertical_image_text.
 import 'package:unimatcher/common/widgets/text/sectionheading.dart';
 import 'package:unimatcher/features/Home/screens/cities_universities.dart';
 import 'package:unimatcher/features/Home/screens/wishlist/wishlist.dart';
+import 'package:unimatcher/features/authentication/controllers/user_controller.dart';
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
@@ -25,25 +27,26 @@ class PrimaryHeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UsersController());
     return CurvedEdgesWidget(
       child: SizedBox(
         height: 350,
         child: Container(
-          color: TColors.primary,
+          color: UMColors.primary,
           child: Stack(
             children: [
               Positioned(
                 top: 50,
                 right: -150,
                 child: CircularContainer(
-                  backgroundColor: TColors.textWhite.withOpacity(0.1),
+                  backgroundColor: UMColors.textWhite.withOpacity(0.1),
                 ),
               ),
               Positioned(
                 top: 150,
                 right: -200,
                 child: CircularContainer(
-                  backgroundColor: TColors.textWhite.withOpacity(0.1),
+                  backgroundColor: UMColors.textWhite.withOpacity(0.1),
                 ),
               ),
 
@@ -55,18 +58,20 @@ class PrimaryHeaderContainer extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          TTexts.homeAppbarTitle,
+                          UMTexts.homeAppbarTitle,
                           style: Theme.of(context)
                               .textTheme
                               .labelMedium!
-                              .apply(color: TColors.grey),
+                              .apply(color: UMColors.grey),
                         ),
-                        Text(
-                          TTexts.homeAppbarSubTitle,
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall!
-                              .apply(color: TColors.white),
+                        Obx(
+                          () => Text(
+                            controller.user.value.fullName,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .apply(color: UMColors.white),
+                          ),
                         )
                       ],
                     ),
@@ -76,25 +81,25 @@ class PrimaryHeaderContainer extends StatelessWidget {
                               Get.to(() => const FavouriteScreen()),
                           icon: const Icon(
                             Iconsax.heart4,
-                            color: TColors.white,
+                            color: UMColors.white,
                           )),
                     ],
                   ),
                   const SizedBox(
-                    height: TSizes.spaceBtwSections,
+                    height: UMSizes.spaceBtwSections,
                   ),
                   const SearchContainer(),
                   const SizedBox(
-                    height: TSizes.spaceBtwSections,
+                    height: UMSizes.spaceBtwSections,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+                    padding: const EdgeInsets.only(left: UMSizes.defaultSpace),
                     child: Column(
                       children: [
                         const UMSectionHeading(
-                            title: 'Popular Cities', textColor: TColors.white),
+                            title: 'Popular Cities', textColor: UMColors.white),
                         const SizedBox(
-                          height: TSizes.spaceBtwItems,
+                          height: UMSizes.spaceBtwItems,
                         ),
 
                         ///Popular Cities
@@ -106,11 +111,11 @@ class PrimaryHeaderContainer extends StatelessWidget {
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (_, index) {
                                 return VerticalImageText(
-                                  image: TImages.lahore,
+                                  image: UMImages.lahore,
                                   title: 'Lahore',
                                   onTap: () =>
                                       Get.to(() => const CitiesUniversities()),
-                                  textColor: TColors.white,
+                                  textColor: UMColors.white,
                                 );
                               }),
                         ),

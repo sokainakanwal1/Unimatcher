@@ -20,16 +20,16 @@ class CalculatorCard extends StatelessWidget {
       child: GestureDetector(
         onTap: onPressed,
         child: Card(
-          color: TColors.primary.withOpacity(0.9),
+          color: UMColors.primary.withOpacity(0.9),
           margin: const EdgeInsets.all(19.0),
           elevation: 5,
-          shadowColor: TColors.grey,
+          shadowColor: UMColors.grey,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
               children: [
                 const SizedBox(
-                  width: TSizes.defaultSpace,
+                  width: UMSizes.defaultSpace,
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -50,7 +50,7 @@ class CalculatorCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  width: TSizes.defaultSpace,
+                  width: UMSizes.defaultSpace,
                 ),
                 Expanded(
                     flex: 5,

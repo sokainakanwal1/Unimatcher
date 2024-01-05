@@ -20,7 +20,7 @@ class UMProfileMenu extends StatelessWidget {
       onTap: onPressed,
       child: Padding(
         padding:
-            const EdgeInsets.symmetric(vertical: TSizes.spaceBtwItems / 1.5),
+            const EdgeInsets.symmetric(vertical: UMSizes.spaceBtwItems / 1.5),
         child: Row(
           children: [
             Expanded(

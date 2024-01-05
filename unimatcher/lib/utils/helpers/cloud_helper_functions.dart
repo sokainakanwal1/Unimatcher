@@ -2,7 +2,7 @@
 // import 'package:flutter/services.dart';
 
 // /// Helper functions for cloud-related operations.
-// class TCloudHelperFunctions {
+// class UMCloudHelperFunctions {
 //   /// Helper function to check the state of a single database record.
 //   ///
 //   /// Returns a Widget based on the state of the snapshot.

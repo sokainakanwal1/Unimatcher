@@ -10,40 +10,40 @@ import 'package:unimatcher/utils/theme/widget_themes/text_theme.dart';
 
 import '../constants/colors.dart';
 
-class TAppTheme {
-  TAppTheme._();
+class UMAppTheme {
+  UMAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
-    disabledColor: TColors.grey,
+    disabledColor: UMColors.grey,
     brightness: Brightness.light,
-    primaryColor: TColors.primary,
-    textTheme: TTextTheme.lightTextTheme,
-    chipTheme: TChipTheme.lightChipTheme,
-    scaffoldBackgroundColor: TColors.white,
-    appBarTheme: TAppBarTheme.lightAppBarTheme,
-    checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
-    bottomSheetTheme: TBottomSheetTheme.lightBottomSheetTheme,
-    elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
-    outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
-    inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
+    primaryColor: UMColors.primary,
+    textTheme: UMTextTheme.lightTextTheme,
+    chipTheme: UMChipTheme.lightChipTheme,
+    scaffoldBackgroundColor: UMColors.white,
+    appBarTheme: UMAppBarTheme.lightAppBarTheme,
+    checkboxTheme: UMCheckboxTheme.lightCheckboxTheme,
+    bottomSheetTheme: UMBottomSheetTheme.lightBottomSheetTheme,
+    elevatedButtonTheme: UMElevatedButtonTheme.lightElevatedButtonTheme,
+    outlinedButtonTheme: UMOutlinedButtonTheme.lightOutlinedButtonTheme,
+    inputDecorationTheme: UMTextFormFieldTheme.lightInputDecorationTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
-    disabledColor: TColors.grey,
+    disabledColor: UMColors.grey,
     brightness: Brightness.dark,
-    primaryColor: TColors.primary,
-    textTheme: TTextTheme.darkTextTheme,
-    chipTheme: TChipTheme.darkChipTheme,
-    scaffoldBackgroundColor: TColors.black,
-    appBarTheme: TAppBarTheme.darkAppBarTheme,
-    checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
-    bottomSheetTheme: TBottomSheetTheme.darkBottomSheetTheme,
-    elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
-    outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
-    inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
+    primaryColor: UMColors.primary,
+    textTheme: UMTextTheme.darkTextTheme,
+    chipTheme: UMChipTheme.darkChipTheme,
+    scaffoldBackgroundColor: UMColors.black,
+    appBarTheme: UMAppBarTheme.darkAppBarTheme,
+    checkboxTheme: UMCheckboxTheme.darkCheckboxTheme,
+    bottomSheetTheme: UMBottomSheetTheme.darkBottomSheetTheme,
+    elevatedButtonTheme: UMElevatedButtonTheme.darkElevatedButtonTheme,
+    outlinedButtonTheme: UMOutlinedButtonTheme.darkOutlinedButtonTheme,
+    inputDecorationTheme: UMTextFormFieldTheme.darkInputDecorationTheme,
   );
 }

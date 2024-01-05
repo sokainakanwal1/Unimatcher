@@ -13,26 +13,26 @@ class UniversityCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = UMHelperFunctions.isDarkMode(context);
     return Container(
         width: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [UniversityStyle.univeristyshadow],
-          borderRadius: BorderRadius.circular(TSizes.univeristyImageRadius),
-          color: dark ? TColors.darkGrey : TColors.white,
+          borderRadius: BorderRadius.circular(UMSizes.univeristyImageRadius),
+          color: dark ? UMColors.darkGrey : UMColors.white,
         ),
         child: Column(children: [
           ///Image + wishlist button
           CircularContainer(
               height: 180,
-              padding: const EdgeInsets.all(TSizes.sm),
-              backgroundColor: dark ? TColors.dark : TColors.light,
+              padding: const EdgeInsets.all(UMSizes.sm),
+              backgroundColor: dark ? UMColors.dark : UMColors.light,
               child: Stack(
                 children: [
                   ///Image
                   const RoundedImage(
-                    imageUrl: TImages.riphahUni,
+                    imageUrl: UMImages.riphahUni,
                     applyImageRadius: true,
                   ),
 
@@ -43,8 +43,8 @@ class UniversityCard extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           color: dark
-                              ? TColors.black.withOpacity(0.9)
-                              : TColors.white.withOpacity(0.9),
+                              ? UMColors.black.withOpacity(0.9)
+                              : UMColors.white.withOpacity(0.9),
                           borderRadius: BorderRadius.circular(100)),
                       child: IconButton(
                           onPressed: () {},
@@ -57,12 +57,12 @@ class UniversityCard extends StatelessWidget {
                 ],
               )),
           const SizedBox(
-            height: TSizes.spaceBtwItems / 2,
+            height: UMSizes.spaceBtwItems / 2,
           ),
 
           ///--Details
           Padding(
-            padding: const EdgeInsets.only(left: TSizes.sm),
+            padding: const EdgeInsets.only(left: UMSizes.sm),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -74,7 +74,7 @@ class UniversityCard extends StatelessWidget {
                   textAlign: TextAlign.left,
                 ),
                 const SizedBox(
-                  height: TSizes.spaceBtwItems / 2,
+                  height: UMSizes.spaceBtwItems / 2,
                 ),
                 Row(
                   children: [
@@ -85,12 +85,12 @@ class UniversityCard extends StatelessWidget {
                       style: Theme.of(context).textTheme.labelMedium,
                     ),
                     const SizedBox(
-                      width: TSizes.xs,
+                      width: UMSizes.xs,
                     ),
                     const Icon(
                       Iconsax.verify5,
-                      color: TColors.primary,
-                      size: TSizes.iconXs,
+                      color: UMColors.primary,
+                      size: UMSizes.iconXs,
                     )
                   ],
                 )

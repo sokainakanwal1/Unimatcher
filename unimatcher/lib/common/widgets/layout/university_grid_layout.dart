@@ -20,8 +20,8 @@ class UMGridLayout extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        mainAxisSpacing: TSizes.gridViewSpacing,
-        crossAxisSpacing: TSizes.gridViewSpacing,
+        mainAxisSpacing: UMSizes.gridViewSpacing,
+        crossAxisSpacing: UMSizes.gridViewSpacing,
         mainAxisExtent: 250,
       ),
       itemBuilder: itemBuilder,

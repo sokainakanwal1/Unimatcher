@@ -8,11 +8,18 @@ class UMDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(TSizes.defaultSpace),
+      padding: const EdgeInsets.fromLTRB(
+        (UMSizes.defaultSpace * 0.6),
+        (UMSizes.defaultSpace * 0.1),
+        (UMSizes.defaultSpace * 0.6),
+        (UMSizes.defaultSpace * 0.6),
+      ),
       child: DropdownButtonFormField(
         isExpanded: true,
         decoration: const InputDecoration(
-          prefixIcon: Icon(Iconsax.sort),
+          prefixIcon: Icon(
+            Iconsax.sort,
+          ),
           hintText: 'Select a University',
         ),
         onChanged: (value) {},
@@ -122,7 +129,10 @@ class UMDropDown extends StatelessWidget {
                   value: option,
                   child: Text(
                     option,
-                    style: TextStyle(fontSize: 12),
+                    style: const TextStyle(
+                      fontSize: 12,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ))
             .toList(),

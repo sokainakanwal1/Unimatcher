@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/helpers/helper_functions.dart';
 
-class TDivider extends StatelessWidget {
-  const TDivider({
+class UMDivider extends StatelessWidget {
+  const UMDivider({
     super.key,
     required this.dividerText,
   });
@@ -12,13 +12,13 @@ class TDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = UMHelperFunctions.isDarkMode(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Flexible(
           child: Divider(
-            color: dark ? TColors.darkGrey : TColors.grey,
+            color: dark ? UMColors.darkGrey : UMColors.grey,
             thickness: 0.5,
             indent: 60,
             endIndent: 5,
@@ -27,7 +27,7 @@ class TDivider extends StatelessWidget {
         Text(dividerText, style: Theme.of(context).textTheme.labelMedium),
         Flexible(
           child: Divider(
-            color: dark ? TColors.darkGrey : TColors.grey,
+            color: dark ? UMColors.darkGrey : UMColors.grey,
             thickness: 0.5,
             indent: 5,
             endIndent: 60,

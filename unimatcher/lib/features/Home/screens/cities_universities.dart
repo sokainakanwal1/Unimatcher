@@ -15,7 +15,7 @@ class CitiesUniversities extends StatelessWidget {
         showBackArrow: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
+        padding: const EdgeInsets.all(UMSizes.defaultSpace),
         child: SingleChildScrollView(
           child: UMGridLayout(
               itemCount: 10, itemBuilder: (_, index) => const UniversityCard()),

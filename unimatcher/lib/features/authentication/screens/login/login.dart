@@ -14,11 +14,11 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = UMHelperFunctions.isDarkMode(context);
     return Scaffold(
         body: SingleChildScrollView(
             child: Padding(
-                padding: TSpacingStyle.paddingWithAppBarHeight,
+                padding: UMSpacingStyle.paddingWithAppBarHeight,
                 child: Column(
                   children: [
                     ///Logo,Title and Sub Title
@@ -28,8 +28,8 @@ class LoginScreen extends StatelessWidget {
                     const InputForm(),
 
                     ///Divider
-                    TDivider(dividerText: TTexts.orSignInWith.capitalize!),
-                    const SizedBox(height: TSizes.spaceBtwSections),
+                    UMDivider(dividerText: UMTexts.orSignInWith.capitalize!),
+                    const SizedBox(height: UMSizes.spaceBtwSections),
 
                     ///Footer
                     const Footer(),

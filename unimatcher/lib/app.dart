@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:unimatcher/bindings/general_binding.dart';
 import 'package:unimatcher/features/Home/screens/home.dart';
 import 'package:unimatcher/features/authentication/screens/onboarding/onboadring.dart';
 import 'package:unimatcher/navigation_menu.dart';
@@ -13,15 +14,16 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: TTexts.appName,
+      title: UMTexts.appName,
       themeMode: ThemeMode.system,
-      theme: TAppTheme.lightTheme,
-      darkTheme: TAppTheme.darkTheme,
+      theme: UMAppTheme.lightTheme,
+      darkTheme: UMAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       // initialBinding: GeneralBindings(),
+      initialBinding: GeneralBindings(),
       //Circular loader meanwhile Authentication Repository is deciding to show relevant screen.
       home: const Scaffold(
-          backgroundColor: TColors.primary,
+          backgroundColor: UMColors.primary,
           body: Center(
             child: CircularProgressIndicator(
               color: Colors.white,

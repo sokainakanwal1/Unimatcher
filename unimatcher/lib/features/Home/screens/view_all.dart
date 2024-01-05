@@ -17,7 +17,7 @@ class AllUniversities extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(UMSizes.defaultSpace),
           child: Column(children: [
             //Drop down
 
@@ -37,7 +37,7 @@ class AllUniversities extends StatelessWidget {
                   .toList(),
             ),
             const SizedBox(
-              height: TSizes.spaceBtwSections,
+              height: UMSizes.spaceBtwSections,
             ),
 
             ///Universities

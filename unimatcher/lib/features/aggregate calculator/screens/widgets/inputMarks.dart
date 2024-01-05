@@ -23,16 +23,16 @@ class InputMarks extends StatelessWidget {
                 height: 100,
                 width: double.infinity,
                 child:
-                    const Image(image: AssetImage(TImages.onBoardingImage2))),
+                    const Image(image: AssetImage(UMImages.onBoardingImage2))),
             _buildInputField('Enter Matric Marks..'),
-            const SizedBox(height: TSizes.spaceBtwInputFields),
+            const SizedBox(height: UMSizes.spaceBtwInputFields),
             _buildInputField('Enter Intermediate Marks..'),
-            const SizedBox(height: TSizes.spaceBtwInputFields),
+            const SizedBox(height: UMSizes.spaceBtwInputFields),
             _buildInputField('Enter Entry Test Marks..'),
-            const SizedBox(height: TSizes.spaceBtwSections),
+            const SizedBox(height: UMSizes.spaceBtwSections),
             SizedBox(
-              height: 50,
-              width: TSizes.buttonWidth,
+              height: 60,
+              width: UMSizes.buttonWidth,
               child: ElevatedButton(
                 onPressed: () => const Text('Hello'),
                 child: Text(
@@ -74,7 +74,7 @@ class InputMarks extends StatelessWidget {
           labelText: labelText,
           border: const OutlineInputBorder(),
           focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: TColors.primary),
+            borderSide: BorderSide(color: UMColors.primary),
           ),
           filled: true,
           fillColor: Colors.white,

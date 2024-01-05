@@ -22,7 +22,7 @@ class UMAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: TSizes.md),
+      padding: const EdgeInsets.symmetric(horizontal: UMSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow
@@ -42,5 +42,5 @@ class UMAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(TDeviceUtils.getAppBarHeight());
+  Size get preferredSize => Size.fromHeight(UMDeviceUtils.getAppBarHeight());
 }

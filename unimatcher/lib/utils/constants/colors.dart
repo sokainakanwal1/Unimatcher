@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TColors {
+class UMColors {
   // App theme colors
   static const Color primary = Color.fromARGB(255, 11, 113, 111);
   static const Color secondary = Color(0xFFFFE24B);
@@ -18,7 +18,7 @@ class TColors {
 
   // Background Container colors
   static const Color lightContainer = Color(0xFFF6F6F6);
-  static Color darkContainer = TColors.white.withOpacity(0.1);
+  static Color darkContainer = UMColors.white.withOpacity(0.1);
 
   // Button colors
   static const Color buttonPrimary = Color(0xFF4b68ff);

@@ -24,25 +24,24 @@ class HomeScreen extends StatelessWidget {
 
             ///Body -- Sliders ---
             Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                padding: const EdgeInsets.all(UMSizes.defaultSpace),
                 child: Column(
                   children: [
                     CarouselSlider(
                       options: CarouselOptions(viewportFraction: 1),
                       items: const [
                         RoundedImage(
-                          imageUrl: TImages.promoBanner1,
+                            imageUrl: UMImages.promoBanner1, borderRadius: 10),
+                        RoundedImage(
+                          imageUrl: UMImages.promoBanner2,
                         ),
                         RoundedImage(
-                          imageUrl: TImages.promoBanner1,
-                        ),
-                        RoundedImage(
-                          imageUrl: TImages.promoBanner1,
+                          imageUrl: UMImages.promoBanner3,
                         ),
                       ],
                     ),
                     const SizedBox(
-                      height: TSizes.spaceBtwItems,
+                      height: UMSizes.spaceBtwItems,
                     ),
 
                     ///---Universities
@@ -54,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         const UMSectionHeading(
                             title: 'All Universities',
-                            textColor: TColors.black),
+                            textColor: UMColors.black),
                         TextButton(
                             onPressed: () =>
                                 Get.to(() => const AllUniversities()),

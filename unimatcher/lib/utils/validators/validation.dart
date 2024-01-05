@@ -10,6 +10,8 @@ class UMValidator {
     if (value == null || value.isEmpty) {
       return 'Email is required.';
     }
+    // Trim leading and trailing whitespaces
+    value = value.trim();
 
     // Regular expression for email validation
     final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
@@ -58,7 +60,7 @@ class UMValidator {
     final phoneRegExp = RegExp(r'^\d{11}$');
 
     if (!phoneRegExp.hasMatch(value)) {
-      return 'Invalid phone number format (10 digits required).';
+      return 'Invalid phone number format (11 digits required).';
     }
 
     return null;

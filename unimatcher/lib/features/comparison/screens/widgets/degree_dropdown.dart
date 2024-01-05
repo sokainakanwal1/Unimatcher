@@ -8,14 +8,18 @@ class DegreeDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(80, 0, 60, 0),
+      padding: const EdgeInsets.fromLTRB(
+        (UMSizes.defaultSpace * 1.5),
+        (UMSizes.defaultSpace * 0.1),
+        (UMSizes.defaultSpace * 1.5),
+        (UMSizes.defaultSpace * 0.6),
+      ),
       child: DropdownButtonFormField(
         isExpanded: true,
         decoration: const InputDecoration(
           prefixIcon: Icon(Iconsax.sort),
           hintText: 'Select a Program',
         ),
-        style: TextStyle(fontSize: 15),
         onChanged: (value) {},
         items: [
           'BS Computer Science',

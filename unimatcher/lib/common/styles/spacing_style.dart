@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
 
-class TSpacingStyle {
+class UMSpacingStyle {
   static const EdgeInsetsGeometry paddingWithAppBarHeight = EdgeInsets.only(
-      top: TSizes.appBarHeight,
-      left: TSizes.defaultSpace,
-      bottom: TSizes.defaultSpace,
-      right: TSizes.defaultSpace);
+      top: UMSizes.appBarHeight,
+      left: UMSizes.defaultSpace,
+      bottom: UMSizes.defaultSpace,
+      right: UMSizes.defaultSpace);
 }

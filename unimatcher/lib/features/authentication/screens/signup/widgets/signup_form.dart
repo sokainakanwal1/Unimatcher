@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:unimatcher/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:unimatcher/features/authentication/screens/signup/verify_email.dart';
@@ -20,7 +23,7 @@ class SignUPForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(SignupController());
 
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = UMHelperFunctions.isDarkMode(context);
     return Form(
         key: controller.signupFormKey,
         child: Column(
@@ -34,13 +37,13 @@ class SignUPForm extends StatelessWidget {
                         UMValidator.validateEmptyText('First name', value),
                     expands: false,
                     decoration: const InputDecoration(
-                      labelText: TTexts.firstName,
+                      labelText: UMTexts.firstName,
                       prefixIcon: Icon(Iconsax.user),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  width: TSizes.spaceBtwInputFields,
+                  width: UMSizes.spaceBtwInputFields,
                 ),
                 Expanded(
                   child: TextFormField(
@@ -49,18 +52,18 @@ class SignUPForm extends StatelessWidget {
                         UMValidator.validateEmptyText('Last name', value),
                     expands: false,
                     decoration: const InputDecoration(
-                      labelText: TTexts.lastName,
+                      labelText: UMTexts.lastName,
                       prefixIcon: Icon(Iconsax.user),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: TSizes.spaceBtwInputFields,
+                  height: UMSizes.spaceBtwInputFields,
                 ),
               ],
             ),
             const SizedBox(
-              height: TSizes.spaceBtwInputFields,
+              height: UMSizes.spaceBtwInputFields,
             ),
 
             ///UserName
@@ -70,12 +73,12 @@ class SignUPForm extends StatelessWidget {
                   UMValidator.validateEmptyText('Username', value),
               expands: false,
               decoration: const InputDecoration(
-                labelText: TTexts.username,
+                labelText: UMTexts.username,
                 prefixIcon: Icon(Iconsax.user_edit),
               ),
             ),
             const SizedBox(
-              height: TSizes.spaceBtwInputFields,
+              height: UMSizes.spaceBtwInputFields,
             ),
 
             ///Email
@@ -83,12 +86,12 @@ class SignUPForm extends StatelessWidget {
               controller: controller.email,
               validator: (value) => UMValidator.validateEmail(value),
               decoration: const InputDecoration(
-                labelText: TTexts.email,
+                labelText: UMTexts.email,
                 prefixIcon: Icon(Iconsax.direct),
               ),
             ),
             const SizedBox(
-              height: TSizes.spaceBtwInputFields,
+              height: UMSizes.spaceBtwInputFields,
             ),
 
             ///Phone Number
@@ -96,27 +99,34 @@ class SignUPForm extends StatelessWidget {
               controller: controller.phoneNumber,
               validator: (value) => UMValidator.validatePhoneNumber(value),
               decoration: const InputDecoration(
-                labelText: TTexts.phoneNo,
+                labelText: UMTexts.phoneNo,
                 prefixIcon: Icon(Iconsax.call),
               ),
             ),
             const SizedBox(
-              height: TSizes.spaceBtwInputFields,
+              height: UMSizes.spaceBtwInputFields,
             ),
 
             ///Password
-            TextFormField(
-              controller: controller.password,
-              validator: (value) => UMValidator.validatePassword(value),
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: TTexts.password,
-                prefixIcon: Icon(Iconsax.password_check),
-                suffixIcon: Icon(Iconsax.eye_slash),
+            Obx(
+              () => TextFormField(
+                controller: controller.password,
+                validator: (value) => UMValidator.validatePassword(value),
+                obscureText: controller.hidePassword.value,
+                decoration: InputDecoration(
+                    labelText: UMTexts.password,
+                    prefixIcon: const Icon(Iconsax.password_check),
+                    suffixIcon: IconButton(
+                      onPressed: () => controller.hidePassword.value =
+                          !controller.hidePassword.value,
+                      icon: Icon(controller.hidePassword.value
+                          ? Iconsax.eye_slash
+                          : Iconsax.eye),
+                    )),
               ),
             ),
             const SizedBox(
-              height: TSizes.spaceBtwSections,
+              height: UMSizes.spaceBtwSections,
             ),
 
             ///Terms and COnditions checkBox
@@ -125,44 +135,47 @@ class SignUPForm extends StatelessWidget {
                 SizedBox(
                     width: 24,
                     height: 24,
-                    child: Checkbox(value: true, onChanged: (value) {})),
+                    child: Obx(() => Checkbox(
+                        value: controller.privacyPolicy.value,
+                        onChanged: (value) => controller.privacyPolicy.value =
+                            !controller.privacyPolicy.value))),
                 const SizedBox(
-                  width: TSizes.spaceBtwItems,
+                  width: UMSizes.spaceBtwItems,
                 ),
                 Text.rich(TextSpan(children: [
                   TextSpan(
-                      text: ' ${TTexts.iAgreeTo} ',
-                      style: Theme.of(context).textTheme.bodySmall),
+                      text: ' ${UMTexts.iAgreeTo} ',
+                      style: Theme.of(context).textTheme.labelSmall),
                   TextSpan(
-                      text: '${TTexts.privacyPolicy} ',
-                      style: Theme.of(context).textTheme.bodyMedium!.apply(
-                          color: dark ? TColors.white : TColors.primary,
+                      text: '${UMTexts.privacyPolicy} ',
+                      style: Theme.of(context).textTheme.labelSmall!.apply(
+                          color: dark ? UMColors.white : UMColors.primary,
                           decoration: TextDecoration.underline,
                           decorationColor:
-                              dark ? TColors.white : TColors.primary)),
+                              dark ? UMColors.white : UMColors.primary)),
                   TextSpan(
-                      text: ' ${TTexts.and} ',
-                      style: Theme.of(context).textTheme.bodySmall),
+                      text: ' ${UMTexts.and} ',
+                      style: Theme.of(context).textTheme.labelSmall),
                   TextSpan(
-                      text: ' ${TTexts.termsOfUse} ',
-                      style: Theme.of(context).textTheme.bodyMedium!.apply(
-                          color: dark ? TColors.white : TColors.primary,
+                      text: ' ${UMTexts.termsOfUse} ',
+                      style: Theme.of(context).textTheme.labelSmall!.apply(
+                          color: dark ? UMColors.white : UMColors.primary,
                           decoration: TextDecoration.underline,
                           decorationColor:
-                              dark ? TColors.white : TColors.primary)),
+                              dark ? UMColors.white : UMColors.primary)),
                 ]))
               ],
             ),
             const SizedBox(
-              height: TSizes.spaceBtwSections,
+              height: UMSizes.spaceBtwSections,
             ),
 
             ///Signup Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(() => const VerifyEmailScreen()),
-                child: const Text(TTexts.createAccount),
+                onPressed: () => controller.signup(),
+                child: const Text(UMTexts.createAccount),
               ),
             ),
           ],

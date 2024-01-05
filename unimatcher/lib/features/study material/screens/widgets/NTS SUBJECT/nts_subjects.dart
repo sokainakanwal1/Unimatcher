@@ -22,45 +22,45 @@ class NTSSubjectCard extends StatelessWidget {
               height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+              padding: const EdgeInsets.only(left: UMSizes.defaultSpace),
               child: Text(
                 'Study Material For NTS',
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
-                    .apply(color: TColors.primary, fontSizeDelta: 6),
+                    .apply(color: UMColors.primary, fontSizeDelta: 6),
               ),
             ),
             const SizedBox(height: 20),
             const SubjectCard(
               subID: 'maths',
-              subImage: TImages.mathsIcon,
+              subImage: UMImages.mathsIcon,
               subTitle: 'Mathmetics',
             ),
             const SubjectCard(
               subID: 'physics',
-              subImage: TImages.phyIcon,
+              subImage: UMImages.phyIcon,
               subTitle: 'Physics',
             ),
             const SubjectCard(
               subID: 'analytics',
-              subImage: TImages.analyticsIcon,
+              subImage: UMImages.analyticsIcon,
               subTitle: 'Analytics',
             ),
             const SubjectCard(
               subID: 'quantative',
-              subImage: TImages.quantativeIcon,
+              subImage: UMImages.quantativeIcon,
               subTitle: 'Quantative',
             ),
             const SubjectCard(
               subID: 'english',
-              subImage: TImages.engIcon,
+              subImage: UMImages.engIcon,
               subTitle: 'English',
             ),
             const SubjectCard(
               subID: 'cs',
-              subImage: TImages.csIcon,
+              subImage: UMImages.csIcon,
               subTitle: 'Computer Science',
             ),
           ]),

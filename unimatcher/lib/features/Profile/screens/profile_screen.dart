@@ -1,9 +1,18 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:unimatcher/common/images/rounded_image.dart';
 import 'package:unimatcher/common/widgets/appBar/appbar.dart';
 import 'package:unimatcher/common/widgets/text/sectionheading.dart';
+import 'package:unimatcher/data/repositories/Authentication/authenticationrepository.dart';
+import 'package:unimatcher/features/Profile/controllers/users_controller.dart';
+import 'package:unimatcher/features/Profile/screens/change_name.dart';
 import 'package:unimatcher/features/Profile/screens/widgets/profile_menu.dart';
+import 'package:unimatcher/features/authentication/controllers/user_controller.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
 
@@ -12,6 +21,10 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
+    final controller2 = UsersController.instance;
+    final controller1 = Get.put(AuthenticationRepository());
+
     return Scaffold(
       appBar: const UMAppBar(
         title: Text('Profile'),
@@ -20,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
       ///--Body
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(UMSizes.defaultSpace),
           child: Column(
             children: [
               ///Profile Picture
@@ -29,7 +42,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     const RoundedImage(
-                      imageUrl: TImages.user,
+                      imageUrl: UMImages.user,
                       width: 80,
                       height: 80,
                     ),
@@ -42,55 +55,55 @@ class ProfileScreen extends StatelessWidget {
 
               /// Details
               const SizedBox(
-                height: TSizes.spaceBtwItems / 2,
+                height: UMSizes.spaceBtwItems / 2,
               ),
               const Divider(),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: UMSizes.spaceBtwItems,
               ),
               const UMSectionHeading(title: 'Profile Information'),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: UMSizes.spaceBtwItems,
               ),
 
               UMProfileMenu(
                 title: 'Name',
-                value: 'Sokaina kanwal',
-                onPressed: () {},
+                value: controller.user.value.fullName,
+                onPressed: () => Get.to(() => const ChangeName()),
               ),
               UMProfileMenu(
                 title: 'Username',
-                value: 'Sokaina_kanwal',
+                value: controller.user.value.username,
                 icon: Iconsax.copy,
                 onPressed: () {},
               ),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: UMSizes.spaceBtwItems,
               ),
               const Divider(),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: UMSizes.spaceBtwItems,
               ),
 
               //Heading personal Information
               const UMSectionHeading(title: 'Personal Information'),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: UMSizes.spaceBtwItems,
               ),
               UMProfileMenu(
                 title: 'User ID',
-                value: '25582',
+                value: controller.user.value.id,
                 icon: Iconsax.copy,
                 onPressed: () {},
               ),
               UMProfileMenu(
                 title: 'E-mail',
-                value: 'Sokainakanwal1@gmail.com',
+                value: controller.user.value.email,
                 onPressed: () {},
               ),
               UMProfileMenu(
                 title: 'Phone Number',
-                value: '03234252937',
+                value: controller.user.value.phoneNumber,
                 onPressed: () {},
               ),
               UMProfileMenu(
@@ -105,22 +118,22 @@ class ProfileScreen extends StatelessWidget {
               ),
 
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: UMSizes.spaceBtwItems,
               ),
               Center(
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () => controller2.deleteAccountWarningPopup(),
                     child: const Text(
                       'Close Account',
                       style: TextStyle(color: Colors.red),
                     )),
               ),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: UMSizes.spaceBtwItems,
               ),
               Center(
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () => controller1.logout(),
                     child: const Text(
                       'Logout',
                       style: TextStyle(color: Colors.red),

@@ -35,12 +35,12 @@ class Row5 extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            width: TSizes.spaceBtwInputFields,
+            width: UMSizes.spaceBtwInputFields,
           ),
           Expanded(
             child: Container(
               height: 50,
-              width: TSizes.buttonWidth,
+              width: UMSizes.buttonWidth,
               child: ElevatedButton(
                 onPressed: () => const Text('Hello'),
                 child: const Text('Apply Prefrence'),

@@ -15,7 +15,7 @@ class RoundedImage extends StatelessWidget {
     this.padding,
     this.isNetworkImage = false,
     this.onPressed,
-    this.borderRadius = TSizes.md,
+    this.borderRadius = UMSizes.md,
   });
 
   final double? width, height;
@@ -42,7 +42,7 @@ class RoundedImage extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius)),
         child: ClipRRect(
           borderRadius: applyImageRadius
-              ? BorderRadius.circular(TSizes.md)
+              ? BorderRadius.circular(UMSizes.md)
               : BorderRadius.zero,
           child: Image(
               fit: fit,

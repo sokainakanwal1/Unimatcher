@@ -1,5 +1,5 @@
 /// This class contains all the App Text in String formats.
-class TTexts {
+class UMTexts {
   // -- GLOBAL Texts
   static const String and = "and";
   static const String skip = "Skip";

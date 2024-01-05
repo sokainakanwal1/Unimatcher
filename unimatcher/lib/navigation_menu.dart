@@ -15,7 +15,7 @@ class NavigationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = UMHelperFunctions.isDarkMode(context);
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
@@ -24,18 +24,18 @@ class NavigationMenu extends StatelessWidget {
             selectedIndex: controller.selectedIndex.value,
             onDestinationSelected: (index) =>
                 controller.selectedIndex.value = index,
-            backgroundColor: dark ? TColors.black : Colors.white,
+            backgroundColor: dark ? UMColors.black : Colors.white,
             indicatorColor: dark
-                ? TColors.white.withOpacity(0.1)
-                : TColors.black.withOpacity(0.1),
+                ? UMColors.white.withOpacity(0.1)
+                : UMColors.black.withOpacity(0.1),
             destinations: const [
               NavigationDestination(icon: Icon(Iconsax.home), label: ''),
+              NavigationDestination(icon: Icon(Iconsax.book_saved), label: ''),
+              NavigationDestination(icon: Icon(Iconsax.arrow), label: ''),
               NavigationDestination(
                 icon: Icon(Iconsax.calculator),
                 label: '',
               ),
-              NavigationDestination(icon: Icon(Iconsax.book1), label: ''),
-              NavigationDestination(icon: Icon(Iconsax.arrow), label: ''),
               NavigationDestination(icon: Icon(Iconsax.user), label: ''),
             ]),
       ),
@@ -49,9 +49,9 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    const CalculatorScreen(),
     const StudyMaterial(),
     const UniversityComparisonScreen(),
+    const CalculatorScreen(),
     const ProfileScreen(),
   ];
 }

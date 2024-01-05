@@ -9,7 +9,7 @@ class VerticalImageText extends StatelessWidget {
     required this.image,
     required this.title,
     required this.textColor,
-    this.backgroundColor = TColors.white,
+    this.backgroundColor = UMColors.white,
     this.onTap,
   });
 
@@ -19,34 +19,34 @@ class VerticalImageText extends StatelessWidget {
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = UMHelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
+        padding: const EdgeInsets.only(right: UMSizes.spaceBtwItems),
         child: Column(
           children: [
             //Circular Icon
             Container(
               width: 56,
               height: 56,
-              padding: const EdgeInsets.all(TSizes.sm),
+              padding: const EdgeInsets.all(UMSizes.sm),
               decoration: BoxDecoration(
                 color:
-                    backgroundColor ?? (dark ? TColors.black : TColors.white),
+                    backgroundColor ?? (dark ? UMColors.black : UMColors.white),
                 borderRadius: BorderRadius.circular(100),
               ),
               child: Center(
                 child: Image(
                   image: AssetImage(image),
                   fit: BoxFit.cover,
-                  color: dark ? TColors.light : TColors.dark,
+                  color: dark ? UMColors.light : UMColors.dark,
                 ),
               ),
             ),
 
             ///Text
-            const SizedBox(height: TSizes.spaceBtwItems / 2),
+            const SizedBox(height: UMSizes.spaceBtwItems / 2),
             SizedBox(
               width: 55,
               child: Text(

@@ -6,12 +6,14 @@ import 'package:unimatcher/features/aggregate%20calculator/screens/widgets/input
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
+import 'package:unimatcher/utils/helpers/helper_functions.dart';
 
 class CalculatorScreen extends StatelessWidget {
   const CalculatorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dark = UMHelperFunctions.isDarkMode(context);
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
@@ -21,36 +23,39 @@ class CalculatorScreen extends StatelessWidget {
             height: 50,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+            padding: const EdgeInsets.fromLTRB(
+                UMSizes.defaultSpace * 0.4,
+                UMSizes.defaultSpace,
+                UMSizes.defaultSpace * 0.4,
+                UMSizes.defaultSpace),
             child: Text(
-              'Want to Calculate Aggregate For?',
+              'Want to Calculate Aggregate For?🤔',
               textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .apply(color: TColors.primary, fontSizeDelta: 8),
+              style: Theme.of(context).textTheme.titleLarge!.apply(
+                  color: dark ? UMColors.white : UMColors.primary,
+                  fontSizeDelta: 7),
             ),
           ),
           const SizedBox(height: 20),
 
           ///Cards
           CalculatorCard(
-            imagePath: TImages.mdcat,
+            imagePath: UMImages.mdcat,
             title: '  MDCAT',
             onPressed: () => Get.to(() => const InputMarks()),
           ),
           CalculatorCard(
-            imagePath: TImages.ecat,
+            imagePath: UMImages.ecat,
             title: '  ECAT',
             onPressed: () => Get.to(() => const InputMarks()),
           ),
           CalculatorCard(
-            imagePath: TImages.nts,
+            imagePath: UMImages.nts,
             title: '  NTS',
             onPressed: () => Get.to(() => const InputMarks()),
           ),
           CalculatorCard(
-            imagePath: TImages.nums,
+            imagePath: UMImages.nums,
             title: '  NUMS',
             onPressed: () => Get.to(() => const InputMarks()),
           ),

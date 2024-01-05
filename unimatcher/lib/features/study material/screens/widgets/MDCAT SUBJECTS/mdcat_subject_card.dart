@@ -22,40 +22,40 @@ class MDCATSubjectCard extends StatelessWidget {
               height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+              padding: const EdgeInsets.only(left: UMSizes.defaultSpace),
               child: Text(
                 'Study Material For MDCAT',
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
-                    .apply(color: TColors.primary, fontSizeDelta: 6),
+                    .apply(color: UMColors.primary, fontSizeDelta: 6),
               ),
             ),
             const SizedBox(height: 20),
             const SubjectCard(
               subID: 'biology',
-              subImage: TImages.bioIcon,
+              subImage: UMImages.bioIcon,
               subTitle: 'Biology',
             ),
             const SubjectCard(
               subID: 'chemistry',
-              subImage: TImages.chemIcon,
+              subImage: UMImages.chemIcon,
               subTitle: 'Chemistry',
             ),
             const SubjectCard(
               subID: 'physics',
-              subImage: TImages.phyIcon,
+              subImage: UMImages.phyIcon,
               subTitle: 'Physics',
             ),
             const SubjectCard(
               subID: 'english',
-              subImage: TImages.engIcon,
+              subImage: UMImages.engIcon,
               subTitle: 'English',
             ),
             const SubjectCard(
               subID: 'logic',
-              subImage: TImages.logicIcon,
+              subImage: UMImages.logicIcon,
               subTitle: 'Logic Reasoning',
             ),
           ]),

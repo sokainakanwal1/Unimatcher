@@ -20,16 +20,16 @@ class SubjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Card(
-        color: TColors.primary.withOpacity(0.9),
+        color: UMColors.primary.withOpacity(0.9),
         margin: const EdgeInsets.all(19.0),
         elevation: 5,
-        shadowColor: TColors.grey,
+        shadowColor: UMColors.grey,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
             children: [
               const SizedBox(
-                width: TSizes.spaceBtwItems,
+                width: UMSizes.spaceBtwItems,
               ),
               Container(
                 decoration: BoxDecoration(
@@ -50,7 +50,7 @@ class SubjectCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                width: TSizes.spaceBtwItems,
+                width: UMSizes.spaceBtwItems,
               ),
               Expanded(
                 flex: 1,
@@ -71,7 +71,7 @@ class SubjectCard extends StatelessWidget {
                         )),
               ),
               const SizedBox(
-                width: TSizes.defaultSpace,
+                width: UMSizes.defaultSpace,
               ),
               const Icon(
                 Iconsax.document_code_2,

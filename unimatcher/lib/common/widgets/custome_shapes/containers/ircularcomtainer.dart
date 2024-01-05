@@ -8,12 +8,12 @@ class CircularContainer extends StatelessWidget {
     this.child,
     this.width,
     this.height,
-    this.radius = TSizes.cardRadiusLg,
+    this.radius = UMSizes.cardRadiusLg,
     this.margin,
     this.showBorder = false,
     this.padding,
-    this.backgroundColor = TColors.white,
-    this.borderColor = TColors.borderPrimary,
+    this.backgroundColor = UMColors.white,
+    this.borderColor = UMColors.borderPrimary,
   });
 
   final double? width;

@@ -23,7 +23,11 @@ class UMTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(TSizes.defaultSpace),
+      padding: const EdgeInsets.fromLTRB(
+          UMSizes.defaultSpace * 0.01,
+          UMSizes.defaultSpace,
+          UMSizes.defaultSpace * 0.4,
+          UMSizes.defaultSpace),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: DataTable(
@@ -33,19 +37,19 @@ class UMTable extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!
-                        .apply(color: TColors.primary))),
+                        .apply(color: UMColors.primary))),
             DataColumn(
                 label: Text('University 1',
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!
-                        .apply(color: TColors.primary))),
+                        .apply(color: UMColors.primary))),
             DataColumn(
                 label: Text('University 2',
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!
-                        .apply(color: TColors.primary))),
+                        .apply(color: UMColors.primary))),
           ],
           rows: List.generate(
             criteriaList.length,
@@ -59,11 +63,11 @@ class UMTable extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .titleSmall!
-                        .apply(color: TColors.primary),
+                        .apply(color: UMColors.primary),
                   ),
                 ),
-                DataCell(const Text('Data')),
-                DataCell(const Text('Data')),
+                const DataCell(Text('Data')),
+                const DataCell(Text('Data')),
               ],
             ),
           ),

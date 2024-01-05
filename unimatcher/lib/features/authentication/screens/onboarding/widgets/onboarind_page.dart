@@ -15,12 +15,12 @@ class onBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(TSizes.defaultSpace),
+      padding: const EdgeInsets.all(UMSizes.defaultSpace),
       child: Column(
         children: [
           Image(
-              width: THelperFunctions.screenWidth() * 0.8,
-              height: THelperFunctions.screenWidth() * 0.6,
+              width: UMHelperFunctions.screenWidth() * 0.8,
+              height: UMHelperFunctions.screenWidth() * 0.6,
               image: AssetImage(image)),
           Text(
             title,
@@ -28,7 +28,7 @@ class onBoardingPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(
-            height: TSizes.spaceBtwItems,
+            height: UMSizes.spaceBtwItems,
           ),
           Text(
             subTitle,

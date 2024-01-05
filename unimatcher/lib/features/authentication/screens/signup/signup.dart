@@ -11,20 +11,20 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    final dark = UMHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
           child: Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              padding: const EdgeInsets.all(UMSizes.defaultSpace),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ///title
-                  Text(TTexts.signupTitle,
+                  Text(UMTexts.signupTitle,
                       style: Theme.of(context).textTheme.headlineMedium),
                   const SizedBox(
-                    height: TSizes.spaceBtwSections,
+                    height: UMSizes.spaceBtwSections,
                   ),
 
                   ///Form
@@ -32,13 +32,13 @@ class SignupScreen extends StatelessWidget {
 
                   ///Divider
                   const SizedBox(
-                    height: TSizes.spaceBtwSections,
+                    height: UMSizes.spaceBtwSections,
                   ),
-                  const TDivider(dividerText: TTexts.orSignUpWith),
+                  const UMDivider(dividerText: UMTexts.orSignUpWith),
 
                   ///Social Buttons/ Footer
                   const SizedBox(
-                    height: TSizes.spaceBtwSections,
+                    height: UMSizes.spaceBtwSections,
                   ),
                   const Footer(),
                 ],

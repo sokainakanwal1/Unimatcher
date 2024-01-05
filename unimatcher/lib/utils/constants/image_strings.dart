@@ -1,7 +1,7 @@
 /* -- App Image Strings -- */
 
 /// This class contains all the App Images in String formats.
-class TImages {
+class UMImages {
   // -- App Logos
   static const String darkAppLogo = "assets/logos/black-logo.png";
   static const String lightAppLogo = "assets/logos/white-logo.png";
@@ -28,6 +28,12 @@ class TImages {
       "assets/icons/categories/icons8-sparkling-diamond-64.png";
   static const String electronicsIcon =
       "assets/icons/categories/icons8-smartphone-64.png";
+
+  //-- Lottie Animations
+  static const String decorAnimation =
+      "assets/images/animations/animation-of-docer.json";
+  static const String successfullyRegisterAnimation =
+      "assets/images/animations/check-register.json";
 
   // -- Brand Icons
   static const String nikeLogo = "assets/icons/brands/nike.png";
@@ -225,7 +231,7 @@ class TImages {
   static const String promoBanner2 =
       "assets/images/products/promo-banner-2.png";
   static const String promoBanner3 =
-      "assets/images/products/promo-banner-3.png";
+      "assets/images/products/promo-banner-3.jpg";
   static const String banner1 = "assets/images/banners/banner_1.jpg";
   static const String banner2 = "assets/images/banners/banner_2.jpg";
   static const String banner3 = "assets/images/banners/banner_3.jpg";
