@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:unimatcher/data/repositories/Authentication/user/user_repository.dart';
-import 'package:unimatcher/data/repositories/user_model.dart';
+import 'package:unimatcher/data/repositories/user/user_repository.dart';
+import 'package:unimatcher/features/Profile/models/user_model.dart';
 import 'package:unimatcher/utils/popups/loaders.dart';
 
 class UserController extends GetxController {

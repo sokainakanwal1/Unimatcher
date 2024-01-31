@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:unimatcher/common/images/rounded_image.dart';
 import 'package:unimatcher/common/widgets/custome_shapes/containers/ircularcomtainer.dart';
+import 'package:unimatcher/common/widgets/univeristies/favourite_icon.dart';
 import 'package:unimatcher/common/widgets/univeristies/univeristyshadow.dart';
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
@@ -40,19 +41,7 @@ class UniversityCard extends StatelessWidget {
                   Positioned(
                     top: 0,
                     right: 0,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: dark
-                              ? UMColors.black.withOpacity(0.9)
-                              : UMColors.white.withOpacity(0.9),
-                          borderRadius: BorderRadius.circular(100)),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Iconsax.heart5,
-                            color: Colors.red,
-                          )),
-                    ),
+                    child: FavouriteIcon(dark: dark),
                   )
                 ],
               )),
@@ -100,3 +89,4 @@ class UniversityCard extends StatelessWidget {
         ]));
   }
 }
+

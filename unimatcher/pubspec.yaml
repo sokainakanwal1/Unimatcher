@@ -15,19 +15,22 @@ dependencies:
 
   # Utility Packages
   http: ^1.1.2
-  intl: ^0.19.0
+  velocity_x: ^4.1.2
+  
   logger: ^2.0.1
   lottie: ^2.7.0
   url_launcher: ^6.1.12
   connectivity_plus: ^5.0.1
   flutter_native_splash: ^2.3.1
   smooth_page_indicator: ^1.1.0
+  chat_gpt_sdk: ^2.2.8
   
 
 
   # Icons
   iconsax: ^0.0.8
   cupertino_icons: ^1.0.2
+  dash_chat_2: ^0.0.19
 
   # State Management
   get: ^4.6.5
@@ -44,6 +47,10 @@ dependencies:
   firebase_auth: ^4.2.1
   cloud_firestore: ^4.13.1
   google_sign_in: ^6.2.1
+  image_picker: ^1.0.6
+  firebase_storage: ^11.6.0
+  cached_network_image: ^3.3.1
+  flutter_dotenv: ^5.1.0
 
 
 

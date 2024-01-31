@@ -5,10 +5,12 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart';
-import 'package:unimatcher/data/repositories/Authentication/authenticationrepository.dart';
-import 'package:unimatcher/data/repositories/Authentication/user/user_repository.dart';
-import 'package:unimatcher/data/repositories/user_model.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:unimatcher/data/repositories/Authentication/Authentication/authenticationrepository.dart';
+import 'package:unimatcher/data/repositories/user/user_repository.dart';
+import 'package:unimatcher/features/Profile/models/user_model.dart';
 import 'package:unimatcher/features/Profile/screens/re_auth_user_login_form.dart';
 import 'package:unimatcher/features/authentication/screens/login/login.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
@@ -24,6 +26,7 @@ class UsersController extends GetxController {
   Rx<UserModel> user = UserModel.empty().obs;
 
   final hidePassword = false.obs;
+  final imageUploading = false.obs;
   final verifyEmail = TextEditingController();
   final verifyPassword = TextEditingController();
   final userRepository = Get.put(UserRepository());
@@ -50,26 +53,32 @@ class UsersController extends GetxController {
   //Save user record for any registration provider
   Future<void> saveUserRecord(UserCredential? UserCredentials) async {
     try {
-      if (UserCredentials != null) {
-        // Convert Name to First and last Name
-        final nameParts =
-            UserModel.nameParts(UserCredentials.user!.displayName ?? ' ');
-        final username = UserModel.generateUsername(
-            UserCredentials.user!.displayName ?? ' ');
+      //First Update Rx User and then check if user data is already stored. If not, store new data .
 
-        //Map Data
-        final user = UserModel(
-            email: UserCredentials.user!.email ?? ' ',
-            id: UserCredentials.user!.uid,
-            firstName: nameParts[0],
-            lastName:
-                nameParts.length > 1 ? nameParts.sublist(1).join(' ') : ' ',
-            username: username,
-            phoneNumber: UserCredentials.user!.phoneNumber ?? ' ',
-            profilePicture: UserCredentials.user!.photoURL ?? ' ');
+      await fetchUserRecord();
 
-        //Save user data
-        await userRepository.saveUserRecord(user);
+      if (user.value.id.isEmpty) {
+        if (UserCredentials != null) {
+          // Convert Name to First and last Name
+          final nameParts =
+              UserModel.nameParts(UserCredentials.user!.displayName ?? ' ');
+          final username = UserModel.generateUsername(
+              UserCredentials.user!.displayName ?? ' ');
+
+          //Map Data
+          final user = UserModel(
+              email: UserCredentials.user!.email ?? ' ',
+              id: UserCredentials.user!.uid,
+              firstName: nameParts[0],
+              lastName:
+                  nameParts.length > 1 ? nameParts.sublist(1).join(' ') : ' ',
+              username: username,
+              phoneNumber: UserCredentials.user!.phoneNumber ?? ' ',
+              profilePicture: UserCredentials.user!.photoURL ?? ' ');
+
+          //Save user data
+          await userRepository.saveUserRecord(user);
+        }
       }
     } catch (e) {
       UMLoaders.warningSnackBar(
@@ -153,6 +162,37 @@ class UsersController extends GetxController {
     } catch (e) {
       FullScreenLoader.stopLoading();
       UMLoaders.warningSnackBar(title: 'Oh,Snap!', message: e.toString());
+    }
+  }
+
+  //Upload Profile Image
+  uploadUserProfilePicture() async {
+    try {
+      final image = await ImagePicker().pickImage(
+          source: ImageSource.gallery,
+          imageQuality: 70,
+          maxHeight: 512,
+          maxWidth: 512);
+      if (image != null) {
+        imageUploading.value = true;
+        final imageurl =
+            await userRepository.uploadImage('Users/Images/Profile', image);
+
+        ///Update User Image Record
+        Map<String, dynamic> json = {'ProfilePicture': imageurl};
+        await userRepository.updateSingleField(json);
+        user.value.profilePicture = imageurl;
+        user.refresh();
+
+        UMLoaders.successSnackBar(
+            title: 'Congratulations',
+            message: 'Your Profile Image has been updated');
+      }
+    } catch (e) {
+      UMLoaders.errorSnackBar(
+          title: 'Oh Snap!', message: 'Something went wrong: $e');
+    } finally {
+      imageUploading.value = false;
     }
   }
 }

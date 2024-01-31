@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:unimatcher/data/repositories/Authentication/user/user_repository.dart';
+import 'package:unimatcher/data/repositories/user/user_repository.dart';
 import 'package:unimatcher/features/Profile/controllers/users_controller.dart';
 import 'package:unimatcher/features/Profile/screens/profile_screen.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';

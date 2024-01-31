@@ -8,11 +8,12 @@ import 'package:iconsax/iconsax.dart';
 import 'package:unimatcher/common/images/rounded_image.dart';
 import 'package:unimatcher/common/widgets/appBar/appbar.dart';
 import 'package:unimatcher/common/widgets/text/sectionheading.dart';
-import 'package:unimatcher/data/repositories/Authentication/authenticationrepository.dart';
+import 'package:unimatcher/data/repositories/Authentication/Authentication/authenticationrepository.dart';
 import 'package:unimatcher/features/Profile/controllers/users_controller.dart';
 import 'package:unimatcher/features/Profile/screens/change_name.dart';
 import 'package:unimatcher/features/Profile/screens/widgets/profile_menu.dart';
 import 'package:unimatcher/features/authentication/controllers/user_controller.dart';
+import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
 
@@ -41,13 +42,26 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const RoundedImage(
-                      imageUrl: UMImages.user,
-                      width: 80,
-                      height: 80,
-                    ),
+                    Obx(() {
+                      final networkImage =
+                          controller2.user.value.profilePicture;
+                      final image = networkImage.isNotEmpty
+                          ? networkImage
+                          : UMImages.user;
+
+                      return (controller2.imageUploading.value)
+                          ? const CircularProgressIndicator(
+                              backgroundColor: UMColors.primary,
+                            )
+                          : RoundedImage(
+                              imageUrl: image,
+                              width: 80,
+                              height: 80,
+                              isNetworkImage: networkImage.isNotEmpty,
+                            );
+                    }),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () => controller2.uploadUserProfilePicture(),
                         child: const Text('Change Profile Picture')),
                   ],
                 ),

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:unimatcher/common/widgets/success_screen/success_screen.dart';
-import 'package:unimatcher/data/repositories/Authentication/authenticationrepository.dart';
+import 'package:unimatcher/data/repositories/Authentication/Authentication/authenticationrepository.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/constants/text_strings.dart';
 import 'package:unimatcher/utils/popups/loaders.dart';

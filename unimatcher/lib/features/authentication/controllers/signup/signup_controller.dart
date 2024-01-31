@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:unimatcher/data/repositories/Authentication/authenticationrepository.dart';
-import 'package:unimatcher/data/repositories/Authentication/user/user_repository.dart';
-import 'package:unimatcher/data/repositories/user_model.dart';
+import 'package:unimatcher/data/repositories/Authentication/Authentication/authenticationrepository.dart';
+import 'package:unimatcher/data/repositories/user/user_repository.dart';
+import 'package:unimatcher/features/Profile/models/user_model.dart';
 import 'package:unimatcher/features/authentication/screens/signup/verify_email.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/helpers/network_manager.dart';

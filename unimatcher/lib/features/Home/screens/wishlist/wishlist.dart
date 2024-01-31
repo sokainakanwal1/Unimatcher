@@ -22,6 +22,7 @@ class FavouriteScreen extends StatelessWidget {
         actions: [
           GestureDetector(
               onTap: () => Get.to(const HomeScreen()),
+              //  Get.to(const HomeScreen()),
               child: const Icon(Iconsax.add)),
         ],
       ),

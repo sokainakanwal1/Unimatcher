@@ -252,7 +252,7 @@ class UMImages {
   static const String book1 = "assets/icons/subjectsIcons/book1.png";
   static const String book2 = "assets/icons/subjectsIcons/book2.png";
   static const String mdcatIcon = "assets/icons/subjectsIcons/doctor.png";
-  static const String ecatIcon = "assets/icons/subjectsIcons/engineer.jpg";
+  static const String ecatIcon = "assets/icons/subjectsIcons/ecat.png";
 
   ///-- Subjects Icons
   static const String bioIcon = "assets/icons/subjectsIcons/bioIcon.png";

@@ -1,8 +1,12 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:unimatcher/data/repositories/Authentication/authenticationrepository.dart';
-import 'package:unimatcher/data/repositories/user_model.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:unimatcher/data/repositories/Authentication/Authentication/authenticationrepository.dart';
+import 'package:unimatcher/features/Profile/models/user_model.dart';
 import 'package:unimatcher/utils/exceptions/firebase_exceptions.dart';
 import 'package:unimatcher/utils/exceptions/format_exceptions.dart';
 import 'package:unimatcher/utils/exceptions/platform_exceptions.dart';
@@ -101,4 +105,22 @@ class UserRepository extends GetxController {
     }
   }
   //Upload any Image
+
+  Future<String> uploadImage(String path, XFile image) async {
+    try {
+      final ref = FirebaseStorage.instance.ref(path).child(image.name);
+      await ref.putFile(File(image.path));
+
+      final url = await ref.getDownloadURL();
+      return url;
+    } on FirebaseException catch (e) {
+      throw UMFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const UMFormatException();
+    } on PlatformException catch (e) {
+      throw UMPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong, Please try again';
+    }
+  }
 }

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:unimatcher/common/widgets/success_screen/success_screen.dart';
-import 'package:unimatcher/data/repositories/Authentication/authenticationrepository.dart';
+import 'package:unimatcher/data/repositories/Authentication/Authentication/authenticationrepository.dart';
 import 'package:unimatcher/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:unimatcher/features/authentication/screens/login/login.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';

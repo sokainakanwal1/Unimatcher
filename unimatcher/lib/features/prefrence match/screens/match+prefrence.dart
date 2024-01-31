@@ -25,24 +25,28 @@ class PrefrenceMatch extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
-            top: 50, // Adjust the top padding as needed
+            top: 20, // Adjust the top padding as needed
           ),
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 60),
+                padding: const EdgeInsets.fromLTRB(
+                    UMSizes.defaultSpace * 0.1,
+                    UMSizes.defaultSpace,
+                    UMSizes.defaultSpace * 0.4,
+                    UMSizes.defaultSpace),
                 child: Text(
                   'Match Your Preference Here!...',
                   textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
-                      .apply(color: UMColors.primary),
+                      .apply(color: UMColors.primary, fontSizeDelta: 3),
                 ),
               ),
               const SizedBox(
-                height: UMSizes.spaceBtwSections,
+                height: UMSizes.spaceBtwSections * 0.3,
               ),
 
               ////--Row 1 DropDowns -> Sector, City

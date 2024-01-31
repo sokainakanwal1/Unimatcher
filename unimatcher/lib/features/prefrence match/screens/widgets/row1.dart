@@ -10,7 +10,11 @@ class Row1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.fromLTRB(
+          UMSizes.defaultSpace * 0.4,
+          UMSizes.defaultSpace,
+          UMSizes.defaultSpace * 0.4,
+          UMSizes.defaultSpace * 0.01),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -18,7 +22,7 @@ class Row1 extends StatelessWidget {
             child: DropdownButtonFormField(
               isExpanded: true,
               decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.sort),
+                prefixIcon: Icon(Iconsax.sort, size: 18),
                 hintText: 'Sector',
               ),
               onChanged: (value) {},
@@ -43,7 +47,7 @@ class Row1 extends StatelessWidget {
             child: DropdownButtonFormField(
               isExpanded: true,
               decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.sort),
+                prefixIcon: Icon(Iconsax.sort, size: 18),
                 hintText: 'City',
               ),
               onChanged: (value) {},

@@ -8,7 +8,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:unimatcher/data/repositories/Authentication/user/user_repository.dart';
+import 'package:unimatcher/data/repositories/user/user_repository.dart';
 import 'package:unimatcher/features/authentication/screens/login/login.dart';
 import 'package:unimatcher/features/authentication/screens/onboarding/onboadring.dart';
 import 'package:unimatcher/features/authentication/screens/signup/verify_email.dart';
@@ -17,6 +17,7 @@ import 'package:unimatcher/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:unimatcher/utils/exceptions/firebase_exceptions.dart';
 import 'package:unimatcher/utils/exceptions/format_exceptions.dart';
 import 'package:unimatcher/utils/exceptions/platform_exceptions.dart';
+import 'package:unimatcher/utils/local_storage/storage_utility.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -36,10 +37,12 @@ class AuthenticationRepository extends GetxController {
   }
 
   //Function to show Relevant Screen
-  screenRedirect() async {
+  void screenRedirect() async {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
+        //Initialize User Specific Storage
+        await UMLocalStorage.init(user.uid);
         Future.delayed(const Duration(milliseconds: 50), () {
           Get.offAll(() => const NavigationMenu());
         });
