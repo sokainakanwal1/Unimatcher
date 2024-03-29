@@ -24,6 +24,7 @@ dependencies:
   flutter_native_splash: ^2.3.1
   smooth_page_indicator: ^1.1.0
   chat_gpt_sdk: ^2.2.8
+  shimmer:
   
 
 
@@ -45,12 +46,13 @@ dependencies:
   #----Firebase -------#
   firebase_core: ^2.24.2
   firebase_auth: ^4.2.1
-  cloud_firestore: ^4.13.1
+  cloud_firestore: 
   google_sign_in: ^6.2.1
   image_picker: ^1.0.6
   firebase_storage: ^11.6.0
   cached_network_image: ^3.3.1
   flutter_dotenv: ^5.1.0
+  random_string: ^2.3.1
 
 
 
@@ -62,7 +64,6 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^3.0.1
-
 
 flutter:
   uses-material-design: true
@@ -77,6 +78,7 @@ flutter:
     - assets/images/banners/
     - assets/images/reviews/
     - assets/images/products/
+    - assets/images/cities/
     - assets/icons/categories/
     - assets/images/animations/
     - assets/images/on_boarding_images/

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:iconsax/iconsax.dart';
@@ -11,14 +10,23 @@ import 'package:unimatcher/common/widgets/image_text_widget/vertical_image_text.
 import 'package:unimatcher/common/widgets/text/sectionheading.dart';
 import 'package:unimatcher/features/Home/screens/cities_universities.dart';
 import 'package:unimatcher/features/Home/screens/wishlist/wishlist.dart';
-import 'package:unimatcher/features/authentication/controllers/user_controller.dart';
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
 import 'package:unimatcher/utils/constants/text_strings.dart';
+import 'package:unimatcher/utils/constants/text_strings.dart';
 
 class PrimaryHeaderContainer extends StatelessWidget {
-  const PrimaryHeaderContainer({
+  List<Map<String, dynamic>> cityData = [
+    {'title': 'Lahore', 'image': UMImages.lahore},
+    {'title': 'Fasilabad', 'image': UMImages.fasilabad},
+    {'title': 'Islamabad', 'image': UMImages.islamabad},
+    {'title': 'Karachi', 'image': UMImages.karachi},
+    {'title': 'Multan', 'image': UMImages.multan},
+    {'title': 'Peshawar', 'image': UMImages.peshawar},
+    {'title': 'Rawalpindi', 'image': UMImages.rawalpindi},
+  ];
+  PrimaryHeaderContainer({
     super.key,
     this.child,
   });
@@ -27,7 +35,6 @@ class PrimaryHeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(UsersController());
     return CurvedEdgesWidget(
       child: SizedBox(
         height: 350,
@@ -64,14 +71,12 @@ class PrimaryHeaderContainer extends StatelessWidget {
                               .labelMedium!
                               .apply(color: UMColors.grey),
                         ),
-                        Obx(
-                          () => Text(
-                            controller.user.value.fullName,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall!
-                                .apply(color: UMColors.white),
-                          ),
+                        Text(
+                          UMTexts.homeAppbarSubTitle,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .apply(color: UMColors.white),
                         )
                       ],
                     ),
@@ -106,18 +111,18 @@ class PrimaryHeaderContainer extends StatelessWidget {
                         SizedBox(
                           height: 80,
                           child: ListView.builder(
-                              shrinkWrap: true,
-                              itemCount: 10,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (_, index) {
-                                return VerticalImageText(
-                                  image: UMImages.lahore,
-                                  title: 'Lahore',
-                                  onTap: () =>
-                                      Get.to(() => const CitiesUniversities()),
-                                  textColor: UMColors.white,
-                                );
-                              }),
+                            shrinkWrap: true,
+                            itemCount: cityData.length,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (_, index) {
+                              return VerticalImageText(
+                                image: cityData[index]['image']!,
+                                title: cityData[index]['title']!,
+                                onTap: () {},
+                                textColor: UMColors.white,
+                              );
+                            },
+                          ),
                         ),
                       ],
                     ),

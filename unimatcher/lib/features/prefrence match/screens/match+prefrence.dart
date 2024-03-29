@@ -80,12 +80,12 @@ class PrefrenceMatch extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: UMGridLayout(
-                    itemCount: 6,
-                    itemBuilder: (_, index) => const UniversityCard()),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: UMGridLayout(
+              //       itemCount: 6,
+              //       itemBuilder: (_, index) => const UniversityCard()),
+              // ),
             ],
           ),
         ),

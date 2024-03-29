@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -25,6 +26,8 @@ class AuthenticationRepository extends GetxController {
   ///Variables
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
+
+  FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   //Get Authentication User Data
   User? get authUser => _auth.currentUser;
@@ -74,6 +77,37 @@ class AuthenticationRepository extends GetxController {
     try {
       return await _auth.signInWithEmailAndPassword(
           email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw UMFirebaseAuthException(e.code).message;
+    } on FormatException catch (_) {
+      throw const UMFormatException();
+    } on PlatformException catch (e) {
+      throw UMPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong, Please try again';
+    }
+  }
+
+  ///EmailAuthentication -SignIn for Admin
+  Future<UserCredential> adminLoginWithEmailAndPassword(
+      String username, String password) async {
+    try {
+      // Query Firestore collection 'Admin' to find a document with matching username and password
+      QuerySnapshot querySnapshot = await _firestore
+          .collection('Admin')
+          .where('username', isEqualTo: username)
+          .where('password', isEqualTo: password)
+          .limit(1)
+          .get();
+
+      if (querySnapshot.docs.isNotEmpty) {
+        // If there is a document matching the provided credentials, sign in
+        return await _auth.signInWithEmailAndPassword(
+            email: username, password: password);
+      } else {
+        // If no matching document found, throw an exception indicating invalid admin credentials
+        throw UMFirebaseAuthException('invalid-credentials').message;
+      }
     } on FirebaseAuthException catch (e) {
       throw UMFirebaseAuthException(e.code).message;
     } on FormatException catch (_) {

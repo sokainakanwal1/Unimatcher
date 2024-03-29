@@ -15,7 +15,7 @@ class UMImages {
       "assets/icons/categories/icons8-bowling-64.png";
   static const String clothIcon =
       "assets/icons/categories/icons8-tailors-dummy-64.png";
-  static const String lahore = "assets/icons/categories/Minar-e-Pakistan.png";
+
   static const String cosmeticsIcon =
       "assets/icons/categories/icons8-cosmetics-64.png";
   static const String animalIcon =
@@ -65,6 +65,15 @@ class UMImages {
       "assets/images/on_boarding_images/sammy-line-calculating.gif";
   static const String onBoardingImage3 =
       "assets/images/on_boarding_images/sammy-line-prepration.gif";
+
+//Cities
+  static const String fasilabad = "assets/images/cities/faislabad.jpg";
+  static const String islamabad = "assets/images/cities/islamabad.png";
+  static const String karachi = "assets/images/cities/karachi.jpg";
+  static const String lahore = "assets/images/cities/lahore.png";
+  static const String multan = "assets/images/cities/multan.jpg";
+  static const String peshawar = "assets/images/cities/peshawar.png";
+  static const String rawalpindi = "assets/images/cities/rawalpindi.png";
 
   // -- Universities
   static const String riphahUni = "assets/images/products/riphahUni.png";
@@ -268,4 +277,6 @@ class UMImages {
       "assets/icons/subjectsIcons/analyticsIcon.png";
   static const String quantativeIcon =
       "assets/icons/subjectsIcons/quantativeIcon.png";
+
+  ///Cities Icons
 }

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:unimatcher/common/widgets/appBar/appbar.dart';
 import 'package:unimatcher/common/widgets/image_text_widget/vertical_image_text.dart';
 import 'package:unimatcher/common/widgets/text/sectionheading.dart';
 import 'package:unimatcher/features/Home/screens/cities_universities.dart';
 import 'package:unimatcher/features/aggregate%20calculator/screens/widgets/calculator_card.dart';
-import 'package:unimatcher/features/aggregate%20calculator/screens/widgets/inputMarks.dart';
 import 'package:unimatcher/features/study%20material/screens/chatbot/chat_page.dart';
 import 'package:unimatcher/features/study%20material/screens/widgets/ECAT%20SUBJECT/ecat_subject_card.dart';
 import 'package:unimatcher/features/study%20material/screens/widgets/MDCAT%20SUBJECTS/mdcat_subject_card.dart';
@@ -70,7 +68,7 @@ class StudyMaterial extends StatelessWidget {
                       return VerticalImageText(
                           image: UMImages.lahore,
                           title: 'Lahore',
-                          onTap: () => Get.to(() => const CitiesUniversities()),
+                          // onTap: () => Get.to(() => const CitiesUniversities()),
                           textColor: dark ? UMColors.white : UMColors.primary,
                           backgroundColor: dark
                               ? UMColors.primary.withOpacity(0.6)

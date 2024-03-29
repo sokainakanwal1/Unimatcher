@@ -4,6 +4,7 @@ import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:iconsax/iconsax.dart';
+
 import 'package:unimatcher/features/authentication/controllers/login/login_controller.dart';
 import 'package:unimatcher/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:unimatcher/features/authentication/screens/signup/signup.dart';
@@ -74,11 +75,6 @@ class InputForm extends StatelessWidget {
                       const Text(UMTexts.rememberMe),
                     ],
                   ),
-
-                  ///Forget password
-                  TextButton(
-                      onPressed: () => Get.to(() => const ForgetPassword()),
-                      child: const Text(UMTexts.forgetPassword)),
                 ],
               ),
               const SizedBox(
@@ -102,6 +98,9 @@ class InputForm extends StatelessWidget {
                   child: OutlinedButton(
                       onPressed: () => Get.to(() => const SignupScreen()),
                       child: const Text(UMTexts.createAccount))),
+              const SizedBox(
+                height: UMSizes.spaceBtwItems,
+              ),
             ],
           ),
         ));

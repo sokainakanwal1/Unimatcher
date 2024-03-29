@@ -21,23 +21,23 @@ class FavouriteScreen extends StatelessWidget {
         ),
         actions: [
           GestureDetector(
-              onTap: () => Get.to(const HomeScreen()),
+              onTap: () => Get.to(HomeScreen()),
               //  Get.to(const HomeScreen()),
               child: const Icon(Iconsax.add)),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(UMSizes.defaultSpace),
-          child: Column(
-            children: [
-              UMGridLayout(
-                  itemCount: 6,
-                  itemBuilder: (_, index) => const UniversityCard())
-            ],
-          ),
-        ),
-      ),
+      // body: SingleChildScrollView(
+      //   child: Padding(
+      //     padding: const EdgeInsets.all(UMSizes.defaultSpace),
+      //     child: Column(
+      //       children: [
+      //         UMGridLayout(
+      //             itemCount: 6,
+      //             itemBuilder: (_, index) => const UniversityCard())
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

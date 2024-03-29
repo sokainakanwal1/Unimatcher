@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:unimatcher/features/aggregate%20calculator/screens/widgets/calculator_card.dart';
-import 'package:unimatcher/features/aggregate%20calculator/screens/widgets/inputMarks.dart';
+import 'package:unimatcher/features/aggregate%20calculator/screens/widgets/ecat_input.dart';
+import 'package:unimatcher/features/aggregate%20calculator/screens/widgets/mdcat_input.dart';
+import 'package:unimatcher/features/aggregate%20calculator/screens/widgets/nts_input.dart';
+import 'package:unimatcher/features/aggregate%20calculator/screens/widgets/nums_input.dart';
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/image_strings.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
@@ -42,22 +45,22 @@ class CalculatorScreen extends StatelessWidget {
           CalculatorCard(
             imagePath: UMImages.mdcat,
             title: '  MDCAT',
-            onPressed: () => Get.to(() => const InputMarks()),
+            onPressed: () => Get.to(() => MdcatInput()),
           ),
           CalculatorCard(
             imagePath: UMImages.ecat,
             title: '  ECAT',
-            onPressed: () => Get.to(() => const InputMarks()),
+            onPressed: () => Get.to(() => EcatInput()),
           ),
           CalculatorCard(
             imagePath: UMImages.nts,
             title: '  NTS',
-            onPressed: () => Get.to(() => const InputMarks()),
+            onPressed: () => Get.to(() => NtsInput()),
           ),
           CalculatorCard(
             imagePath: UMImages.nums,
             title: '  NUMS',
-            onPressed: () => Get.to(() => const InputMarks()),
+            onPressed: () => Get.to(() => NumsInput()),
           ),
         ],
       ),

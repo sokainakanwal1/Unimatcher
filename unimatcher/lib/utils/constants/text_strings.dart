@@ -1,4 +1,5 @@
 /// This class contains all the App Text in String formats.
+import 'package:unimatcher/utils/constants/image_strings.dart';
 class UMTexts {
   // -- GLOBAL Texts
   static const String and = "and";
@@ -68,4 +69,7 @@ class UMTexts {
   // -- Home
   static const String homeAppbarTitle = "Good day for selection";
   static const String homeAppbarSubTitle = "Sokaina Kanwal";
+
+  //List of Cities
+  
 }

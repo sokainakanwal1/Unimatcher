@@ -6,6 +6,7 @@ import 'package:unimatcher/features/prefrence%20match/screens/match+prefrence.da
 import 'package:unimatcher/utils/constants/colors.dart';
 import 'package:unimatcher/utils/constants/sizes.dart';
 import 'package:unimatcher/utils/device/device_utility.dart';
+import 'package:unimatcher/utils/helpers/helper_functions.dart';
 
 class SearchContainer extends StatelessWidget {
   const SearchContainer({
@@ -14,6 +15,8 @@ class SearchContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = UMHelperFunctions.isDarkMode(context);
+
     return GestureDetector(
       onTap: () => Get.to(() => const PrefrenceMatch()),
       child: Padding(
@@ -33,7 +36,13 @@ class SearchContainer extends StatelessWidget {
                 ),
                 Text(
                   'Match Your Prefrence',
-                  style: Theme.of(context).textTheme.bodySmall,
+                  style: TextStyle(
+                    color: dark
+                        ? UMColors.darkerGrey
+                        : UMColors
+                            .darkerGrey, // Change text color based on mode
+                    fontSize: 16.0, // Adjust font size as needed
+                  ),
                 )
               ],
             )),

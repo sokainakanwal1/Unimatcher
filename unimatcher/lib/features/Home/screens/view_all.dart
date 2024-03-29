@@ -41,8 +41,8 @@ class AllUniversities extends StatelessWidget {
             ),
 
             ///Universities
-            UMGridLayout(
-                itemCount: 8, itemBuilder: (_, index) => const UniversityCard())
+            // UMGridLayout(
+            //     itemCount: 8, itemBuilder: (_, index) => const UniversityCard())
           ]),
         ),
       ),
